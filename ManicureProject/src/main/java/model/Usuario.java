@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package dao;
+package model;
 
 /**
  *
@@ -17,6 +17,14 @@ public class Usuario {
     //CONSTRUTOR DO OBJETO USUARIO
     public Usuario(int idUsuario, String email, String nome, String senha, String telefone) {
         this.idUsuario = idUsuario;
+        this.email = email;
+        this.nome = nome;
+        this.senha = senha;
+        this.telefone = telefone;
+    }
+
+    //CONSTRUTOR DO USUARIO SEM ID
+    public Usuario(String email, String nome, String senha, String telefone) {
         this.email = email;
         this.nome = nome;
         this.senha = senha;

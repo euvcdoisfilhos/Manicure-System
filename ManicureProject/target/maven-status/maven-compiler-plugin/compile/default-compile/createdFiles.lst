@@ -1,2 +1,3 @@
-main\Main.class
+util\ConnectionFactory.class
 dao\Usuario.class
+main\Main.class

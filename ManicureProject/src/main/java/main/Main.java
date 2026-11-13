@@ -4,7 +4,11 @@
  */
 package main;
 
-import dao.Usuario;
+import dao.UsuarioImpl;
+import java.sql.Connection;
+import java.sql.SQLException;
+import model.Usuario;
+import util.ConnectionFactory;
 
 /**
  *
@@ -18,6 +22,15 @@ public class Main {
         //INSTANCIAR UM OBJETO DE USUARIO
         Usuario user1 = new Usuario(1, "thiago@gmail.com", "Thiago Monteiro", "", "4971239273");
         System.out.println(user1);
+
+        try (Connection conn
+                = ConnectionFactory.getConnection()) {
+            System.out.println("Conectado ao banco!");
+        } catch (SQLException e) {
+            System.err.println("Erro ao conectar: "
+                    + e.getMessage());
+        }
+
     }
 
 }
