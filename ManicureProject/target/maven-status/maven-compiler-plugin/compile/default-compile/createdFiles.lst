@@ -1,3 +1,2 @@
-com\mycompany\manicureproject\Testes.class
-com\mycompany\manicureproject\ManicureProject.class
-Interface\Render.class
+main\Main.class
+dao\Usuario.class
