@@ -17,19 +17,7 @@ import util.ConnectionFactory;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
-
-        //INSTANCIAR UM OBJETO DE USUARIO
-        Usuario user1 = new Usuario(1, "thiago@gmail.com", "Thiago Monteiro", "", "4971239273");
-        System.out.println(user1);
-
-        try (Connection conn
-                = ConnectionFactory.getConnection()) {
-            System.out.println("Conectado ao banco!");
-        } catch (SQLException e) {
-            System.err.println("Erro ao conectar: "
-                    + e.getMessage());
-        }
+        
 
     }
 
