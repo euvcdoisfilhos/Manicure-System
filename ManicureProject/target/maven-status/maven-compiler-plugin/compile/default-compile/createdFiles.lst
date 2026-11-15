@@ -1,5 +1,5 @@
+dao\UsuarioImpl.class
 dao\UsuarioDAO.class
 util\ConnectionFactory.class
 model\Usuario.class
-dao\UsuarioImpl.class
 main\Main.class

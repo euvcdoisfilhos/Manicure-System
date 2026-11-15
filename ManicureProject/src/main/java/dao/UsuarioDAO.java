@@ -12,5 +12,13 @@ import model.Usuario;
  */
 public interface UsuarioDAO {
 
-    public void inserir(Usuario usuario);
+    public void inserirUsuario(Usuario usuario);
+
+    public void atualizarUsuario(Usuario usuario);
+
+    public void deletarUsuario(int id);
+
+    public Usuario buscarUsuarioPorId(int id);
+    
+    public void listarUsuarios();
 }
