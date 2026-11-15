@@ -1,4 +1,6 @@
 
+import dao.UsuarioDAO;
+import dao.UsuarioImpl;
 import java.sql.Connection;
 import java.sql.SQLException;
 import model.Usuario;
@@ -15,6 +17,8 @@ import util.ConnectionFactory;
 public class Testes {
 
     public static void main(String[] args) {
+        //INSTANCIAR O USUARIO DAO
+        UsuarioDAO dao = new UsuarioImpl();
 
         try (Connection conn
                 = ConnectionFactory.getConnection()) {
@@ -27,5 +31,6 @@ public class Testes {
         //INSTANCIAR UM OBJETO DE USUARIO
         Usuario user1 = new Usuario(1, "thiago@gmail.com", "Thiago Monteiro", "", "4971239273");
         System.out.println(user1);
+        dao.atualizar(user1);
     }
 }
