@@ -13,4 +13,5 @@ import model.Usuario;
 public interface UsuarioDAO {
 
     public void inserir(Usuario usuario);
+    public void atualizar(Usuario usuario);
 }
