@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 /**
@@ -75,6 +71,30 @@ public class Usuario {
     @Override
     public String toString() {
         return "O usuario se chama " + getNome();
+    }
+
+    //VALIDACAO DE REGRA DE NEGOCIOS
+    public void validarUsuario(Usuario usuario) {
+        if (usuario == null) {
+            throw new IllegalArgumentException("O oobjeto usuario nao pode ser nulo.");
+        }
+
+        if (usuario.getIdUsuario() <= 0) {
+            throw new IllegalArgumentException("ID do usuario invalido para a atualizacao " + usuario.getIdUsuario());
+        }
+
+        if (usuario.getNome() == null || usuario.getNome().trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome do usuario nao pode ser vazio.");
+        }
+
+        if (usuario.getEmail() == null || usuario.getEmail().trim().isEmpty()) {
+            throw new IllegalArgumentException("O email do usuario nao pode ser vazio.");
+        }
+
+        if (usuario.getSenha() == null || usuario.getSenha().trim().isEmpty()) {
+            throw new IllegalArgumentException("A senha do usuario nao pode ser vazio.");
+        }
+
     }
 
 }
