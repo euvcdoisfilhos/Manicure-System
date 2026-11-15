@@ -29,17 +29,15 @@ public class Testes {
         }
 
         //INSTANCIAR UM OBJETO DE USUARIO
-        Usuario user1 = new Usuario(1, "thiago@gmail.com", "Thiago Monteiro", "thiago123", "4971239273");
+        Usuario user1 = new Usuario(1, "thiago@gmail.com", "Thiago Monteiro", "thiago123",
+                "Rua dos Bobs No 0", "2011-11-11", "44984673946");
         System.out.println(user1);
 
         //USUARIO TEMPORARIO PARA TESTE DO UPDATE
-        Usuario userTemp = new Usuario(1, "helena@gmail.com", "Helena Matias", "helena123", "4971239273");
-
-        /*
-        dao.inserirUsuario(user1);
-        dao.atualizarUsuario(userTemp);
-         */
-        System.out.println(dao.buscarUsuarioPorId(userTemp.getIdUsuario()));
-
+        //Usuario userTemp = new Usuario(1, "helena@gmail.com", "Helena Matias", "helena123", "4971239273");
+        //dao.inserirUsuario(user1);
+        dao.listarUsuarios();
+        //dao.atualizarUsuario(userTemp);
+        //System.out.println(dao.buscarUsuarioPorId(userTemp.getIdUsuario()));
     }
 }
