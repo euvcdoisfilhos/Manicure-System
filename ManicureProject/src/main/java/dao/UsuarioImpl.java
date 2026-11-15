@@ -33,8 +33,15 @@ public class UsuarioImpl implements UsuarioDAO {
     @Override
     public void atualizar(Usuario usuario) {
 
+        try {
+            usuario.validarUsuario(usuario);
+        } catch (IllegalArgumentException e) {
+            System.err.println("A validacao falhou: " + e.getMessage());
+            return;
+        }
+
         String sql = "UPDATE usuario SET nome=?, email=?,senha=? WHERE idUsuario=?";
-        
+
         try (
                 Connection conn = ConnectionFactory.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
