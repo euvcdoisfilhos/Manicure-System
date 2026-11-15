@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import model.Usuario;
 import util.ConnectionFactory;
 
@@ -132,9 +131,7 @@ public class UsuarioImpl implements UsuarioDAO {
     @Override
     public void listarUsuarios() {
         String sql = "SELECT idUsuario, email, nome, senha, endereco, data_nascimento, telefone, status, tipo_perfil FROM usuario";
-        try (Connection conn = ConnectionFactory.getConnection();
-                PreparedStatement pstmt = conn.prepareStatement(sql);
-                ResultSet rs = pstmt.executeQuery()) {
+        try (Connection conn = ConnectionFactory.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
                 Usuario usuario = new Usuario(
