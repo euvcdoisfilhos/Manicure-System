@@ -8,23 +8,62 @@ public class Usuario {
 
     //VARIAVEIS GLOBAIS
     private int idUsuario;
-    private String email, nome, senha, telefone;
+    private int status = 1;
+    private String email, nome, senha, endereco, data_nascimento, telefone,
+            tipo_perfil = "CLIENTE";
 
-    //CONSTRUTOR DO OBJETO USUARIO
-    public Usuario(int idUsuario, String email, String nome, String senha, String telefone) {
+    //CONSTRUTOR PADRAO
+    public Usuario() {
+    }
+
+    //CONSTRUTOR COMPLETO DO OBJETO USUARIO COM ID
+    public Usuario(int idUsuario, String email, String nome, String senha, String endereco, String data_nascimento, String telefone, int status, String tipo_perfil) {
         this.idUsuario = idUsuario;
         this.email = email;
         this.nome = nome;
         this.senha = senha;
+        this.endereco = endereco;
+        this.data_nascimento = data_nascimento;
         this.telefone = telefone;
+        this.status = status;
+        this.tipo_perfil = tipo_perfil;
     }
 
-    //CONSTRUTOR DO USUARIO SEM ID
-    public Usuario(String email, String nome, String senha, String telefone) {
+    //CONSTRUTOR DO OBJETO USUARIO COM ID (SEM STATUS E PERFIL EXPLICITOS)
+    public Usuario(int idUsuario, String email, String nome, String senha, String endereco, String data_nascimento, String telefone) {
+        this(idUsuario, email, nome, senha, endereco, data_nascimento, telefone, 1, "CLIENTE");
+    }
+
+    //CONSTRUTOR COMPLETO SEM ID
+    public Usuario(String email, String nome, String senha, String endereco, String data_nascimento, String telefone, int status, String tipo_perfil) {
         this.email = email;
         this.nome = nome;
         this.senha = senha;
+        this.endereco = endereco;
+        this.data_nascimento = data_nascimento;
         this.telefone = telefone;
+        this.status = status;
+        this.tipo_perfil = tipo_perfil;
+    }
+
+    //CONSTRUTOR DO USUARIO SEM ID (STATUS NO INICIO)
+    public Usuario(int status, String email, String nome, String senha, String endereco, String data_nascimento, String telefone, String tipo_perfil) {
+        this(email, nome, senha, endereco, data_nascimento, telefone, status, tipo_perfil);
+    }
+
+    //CONSTRUTOR SEM ID (SEM STATUS E PERFIL EXPLICITOS)
+    public Usuario(String email, String nome, String senha, String endereco, String data_nascimento, String telefone) {
+        this(email, nome, senha, endereco, data_nascimento, telefone, 1, "CLIENTE");
+    }
+
+    //CONSTRUTOR SIMPLIFICADO COM ID
+    public Usuario(int idUsuario, String email, String nome, String senha, String telefone) {
+        this(idUsuario, email, nome, senha, null, null, telefone, 1, "CLIENTE");
+    }
+
+    //CONSTRUTOR SIMPLIFICADO SEM ID
+    public Usuario(String email, String nome, String senha, String telefone) {
+        this(email, nome, senha, null, null, telefone, 1, "CLIENTE");
     }
 
     //GETTERS AND SETTERS
@@ -34,6 +73,14 @@ public class Usuario {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getEmail() {
@@ -60,12 +107,36 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getData_nascimento() {
+        return data_nascimento;
+    }
+
+    public void setData_nascimento(String data_nascimento) {
+        this.data_nascimento = data_nascimento;
+    }
+
     public String getTelefone() {
         return telefone;
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getTipo_perfil() {
+        return tipo_perfil;
+    }
+
+    public void setTipo_perfil(String tipo_perfil) {
+        this.tipo_perfil = tipo_perfil;
     }
 
     @Override
