@@ -74,6 +74,26 @@ public class Usuario {
     }
 
     //VALIDACAO DE REGRA DE NEGOCIOS
+    //VALIDACAO DE INSERCAO
+    public void salvar(Usuario usuario) {
+        if (usuario == null) {
+            throw new IllegalArgumentException("O oobjeto usuario nao pode ser nulo.");
+        }
+
+        if (usuario.getNome() == null || usuario.getNome().trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome do usuario nao pode ser vazio.");
+        }
+
+        if (usuario.getEmail() == null || usuario.getEmail().trim().isEmpty()) {
+            throw new IllegalArgumentException("O email do usuario nao pode ser vazio.");
+        }
+
+        if (usuario.getSenha() == null || usuario.getSenha().trim().isEmpty()) {
+            throw new IllegalArgumentException("A senha do usuario nao pode ser vazio.");
+        }
+    }
+
+    //VALIDACAO DE ALTERACAO DO BANCO
     public void validarUsuario(Usuario usuario) {
         if (usuario == null) {
             throw new IllegalArgumentException("O oobjeto usuario nao pode ser nulo.");

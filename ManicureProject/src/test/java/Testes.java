@@ -32,6 +32,7 @@ public class Testes {
         Usuario user1 = new Usuario("thiago@gmail.com" ,"Thiago Monteiro", "thiago123", "4971239273");
         System.out.println(user1);
         
+        //USUARIO TEMPORARIO PARA TESTE DO UPDATE
         Usuario userTemp = new Usuario(2,"helena@gmail.com", "Helena Matias", "helena123", "4971239273");
         
         
