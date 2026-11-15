@@ -29,8 +29,13 @@ public class Testes {
         }
 
         //INSTANCIAR UM OBJETO DE USUARIO
-        Usuario user1 = new Usuario(1, "thiago@gmail.com", "Thiago Monteiro", "", "4971239273");
+        Usuario user1 = new Usuario("thiago@gmail.com" ,"Thiago Monteiro", "thiago123", "4971239273");
         System.out.println(user1);
-        dao.atualizar(user1);
+        
+        Usuario userTemp = new Usuario(2,"helena@gmail.com", "Helena Matias", "helena123", "4971239273");
+        
+        
+       dao.inserir(user1);
+       dao.atualizar(userTemp);
     }
 }
