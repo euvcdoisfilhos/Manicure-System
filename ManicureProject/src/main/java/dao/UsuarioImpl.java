@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import model.Usuario;
@@ -75,6 +76,37 @@ public class UsuarioImpl implements UsuarioDAO {
         } catch (SQLException e) {
             System.out.println("Erro ao remover usuario:" + e.getMessage());
         }
+    }
+
+    @Override
+    public Usuario buscarUsuarioPorId(int id) {
+        String sql = "SELECT idUSuario, email, nome, senha, telefone FROM usuario WHERE idUsuario = ?";
+        try (Connection conn = ConnectionFactory.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+
+            pstmt.setInt(1, id);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Usuario(
+                            //o numero de paramatros passado na querry tem de ser o mesmo numero de rs.get
+                            rs.getInt("idUsuario"),
+                            rs.getString("email"),
+                            rs.getString("nome"),
+                            rs.getString("senha"),
+                            rs.getString("telefone")
+                    );
+                    
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Nao possivel ler o usuario: " + e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public void listarUsuarios() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
