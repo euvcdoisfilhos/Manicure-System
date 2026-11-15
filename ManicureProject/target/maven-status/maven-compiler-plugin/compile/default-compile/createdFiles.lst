@@ -3,3 +3,4 @@ dao\UsuarioDAO.class
 util\ConnectionFactory.class
 model\Usuario.class
 main\Main.class
+view\JanelaPrincipal.class
