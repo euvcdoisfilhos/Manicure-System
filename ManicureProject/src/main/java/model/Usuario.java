@@ -56,16 +56,6 @@ public class Usuario {
         this(email, nome, senha, endereco, data_nascimento, telefone, 1, "CLIENTE");
     }
 
-    //CONSTRUTOR SIMPLIFICADO COM ID
-    public Usuario(int idUsuario, String email, String nome, String senha, String telefone) {
-        this(idUsuario, email, nome, senha, null, null, telefone, 1, "CLIENTE");
-    }
-
-    //CONSTRUTOR SIMPLIFICADO SEM ID
-    public Usuario(String email, String nome, String senha, String telefone) {
-        this(email, nome, senha, null, null, telefone, 1, "CLIENTE");
-    }
-
     //GETTERS AND SETTERS
     public int getIdUsuario() {
         return idUsuario;
